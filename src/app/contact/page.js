@@ -43,7 +43,7 @@ export default function Contact() {
             Get In Touch - <span className="bg-gradient-to-r from-[#F72585] to-[#7209b7] bg-clip-text text-transparent">Ask Me Anything!</span>
           </h2>
           <p className="mt-4 text-gray-400 text-sm md:text-base leading-relaxed max-w-md mx-auto">
-            Ready to collaborate or have a project in mind? I'm always open to new opportunities and interesting conversations.
+            {"Ready to collaborate or have a project in mind? I'm always open to new opportunities and interesting conversations."}
           </p>
           <div className="h-1.5 w-24 bg-gradient-to-r from-[#F72585] to-[#7209b7] mx-auto mt-6 rounded-full" />
         </motion.div>

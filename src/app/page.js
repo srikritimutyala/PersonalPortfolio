@@ -25,12 +25,60 @@ export default function Home() {
   const [isTyping, setIsTyping] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
   
-  const chatEndRef = useRef(null);
+  const chatContainerRef = useRef(null);
 
   // Auto-scroll chat to bottom
   useEffect(() => {
-    chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    if (chatContainerRef.current) {
+      if (messages.length === 1 && !isTyping) {
+        chatContainerRef.current.scrollTo({
+          top: chatContainerRef.current.scrollHeight,
+          behavior: "auto",
+        });
+      } else {
+        chatContainerRef.current.scrollTo({
+          top: chatContainerRef.current.scrollHeight,
+          behavior: "smooth",
+        });
+      }
+    }
   }, [messages, isTyping]);
+
+  // Force scroll to top on mount and set scroll restoration to manual
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      // Prevent browser from restoring scroll position
+      if ("scrollRestoration" in window.history) {
+        window.history.scrollRestoration = "manual";
+      }
+
+      // Clear URL hash to prevent browser/Next.js from scrolling to sections on refresh
+      if (window.location.hash) {
+        window.history.replaceState(
+          null,
+          "",
+          window.location.pathname + window.location.search
+        );
+      }
+
+      // Scroll to top immediately
+      window.scrollTo(0, 0);
+      
+      // Repeatedly force scroll to top during the first 500ms to override any lazy layouts/Next.js scroll behavior
+      let count = 0;
+      const interval = setInterval(() => {
+        window.scrollTo(0, 0);
+        count++;
+        if (count >= 10) {
+          clearInterval(interval);
+        }
+      }, 50);
+
+      return () => {
+        clearInterval(interval);
+      };
+    }
+  }, []);
 
   // Show/hide Back to Top button
   useEffect(() => {
@@ -136,13 +184,22 @@ export default function Home() {
               <span>Download Resume</span>
             </a>
             <a
-              href="https://linkedin.com/in/srikriti-mutyala"
+              href="https://www.linkedin.com/in/srikritimutyala"
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-3 rounded-full bg-white/5 border border-white/10 text-gray-200 text-xs font-bold tracking-wider uppercase hover:border-[#7209b7] hover:bg-white/10 hover:-translate-y-0.5 transition-all duration-300 flex items-center gap-2 cursor-pointer"
             >
               <Linkedin className="h-4.5 w-4.5 text-[#F72585]" />
-              <span>Let's Connect</span>
+              <span>{"Let's Connect"}</span>
+            </a>
+            <a
+              href="https://github.com/srikritimutyala"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-3 rounded-full bg-white/5 border border-white/10 text-gray-200 text-xs font-bold tracking-wider uppercase hover:border-[#b5179e] hover:bg-white/10 hover:-translate-y-0.5 transition-all duration-300 flex items-center gap-2 cursor-pointer"
+            >
+              <Github className="h-4.5 w-4.5 text-[#F72585]" />
+              <span>GitHub</span>
             </a>
           </motion.div>
 
@@ -173,7 +230,10 @@ export default function Home() {
             >
               <div className="glass-card rounded-2xl p-5 border border-white/10 h-64 flex flex-col justify-between text-left">
                 {/* Message Log */}
-                <div className="flex-1 overflow-y-auto space-y-3.5 pr-2 mb-4 scrollbar-thin">
+                <div
+                  ref={chatContainerRef}
+                  className="flex-1 overflow-y-auto space-y-3.5 pr-2 mb-4 scrollbar-thin"
+                >
                   {messages.map((msg, i) => (
                     <div
                       key={i}
@@ -215,7 +275,6 @@ export default function Home() {
                       </div>
                     </div>
                   )}
-                  <div ref={chatEndRef} />
                 </div>
 
                 {/* Input Area */}

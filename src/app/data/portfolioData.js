@@ -6,7 +6,7 @@ export const personalInfo = {
   avatar: "/bitmoji.png",
   headshot: "/headshot.png",
   email: "mutyalasrikriti2006@gmail.com",
-  linkedin: "https://linkedin.com/in/srikriti-mutyala",
+  linkedin: "https://www.linkedin.com/in/srikritimutyala",
   github: "https://github.com/srikritimutyala",
   bio: "I am a student at the University of Illinois Urbana-Champaign (UIUC) dual majoring in Computer Science and Statistics. I'm passionate about Artificial Intelligence, Machine Learning, and Computer Vision, specifically building accessibility platforms and data-driven behavioral health interventions. I thrive at the intersection of rigorous data analysis and full-stack software development.",
 };
@@ -18,6 +18,7 @@ export const skills = {
     { name: "C++", icon: "devicon-cplusplus-plain" },
     { name: "JavaScript", icon: "devicon-javascript-plain" },
     { name: "Swift", icon: "devicon-swift-plain" },
+    { name: "R", icon: "devicon-r-plain" },
     { name: "SQL", icon: "devicon-postgresql-plain" },
     { name: "HTML5/CSS3", icon: "devicon-html5-plain" },
   ],
@@ -25,6 +26,7 @@ export const skills = {
     { name: "React / Next.js", icon: "devicon-react-original" },
     { name: "Node.js / Express", icon: "devicon-nodejs-plain" },
     { name: "Flask / Python Web", icon: "devicon-flask-original" },
+    { name: "PyTorch", icon: "devicon-pytorch-original" },
     { name: "TensorFlow / Keras", icon: "devicon-tensorflow-line" },
     { name: "OpenCV", icon: "devicon-opencv-plain" },
     { name: "MediaPipe", icon: "devicon-google-plain" },
@@ -34,6 +36,8 @@ export const skills = {
   ],
   tools: [
     { name: "Docker", icon: "devicon-docker-plain" },
+    { name: "Firebase", icon: "devicon-firebase-plain" },
+    { name: "Supabase", icon: "devicon-supabase-plain" },
     { name: "Cloudflare Workers", icon: "devicon-cloudflare-plain" },
     { name: "GitHub Actions", icon: "devicon-github-original" },
     { name: "Git", icon: "devicon-git-plain" },
@@ -162,7 +166,7 @@ export const projects = [
       "Automatically generates code and opens pull requests when GitHub tickets move to 'Ready'.",
       "Architected serverless workflow using Cloudflare Workers, GitHub Actions, and GraphQL API."
     ],
-    github: "https://github.com/srikritimutyala",
+    github: "https://github.com/Srikriti-s-Workspace/codeAssist",
     img: "/githubIcon.webp"
   },
   {
@@ -175,7 +179,7 @@ export const projects = [
       "Designed Streamlit dashboard for financial forecasting, charting, and buy/sell triggers.",
       "Recognized as a Girls Who Code Financial Challenge Finalist."
     ],
-    github: "https://github.com/srikritimutyala/PullupCounter",
+    github: "https://github.com/srikritimutyala/Samara",
     img: "/GWC.jpg"
   },
   {
@@ -188,7 +192,7 @@ export const projects = [
       "Designed Swift/Flask full-stack architecture with MongoDB to support matching networks.",
       "Pitched product prototype and business strategies at the Cozad New Venture Challenge."
     ],
-    github: "https://github.com/srikritimutyala",
+    github: "https://github.com/srikritimutyala/Samara",
     img: "/Samara.png"
   },
   {
@@ -200,7 +204,7 @@ export const projects = [
       "Built scheduling, medical records management, and chat features for 25+ users.",
       "Integrated real-time WebRTC video calls and notification portals for healthcare providers."
     ],
-    github: "https://github.com/srikritimutyala/handWritingRecognizer",
+    github: "https://github.com/srikritimutyala/homedcts4u---VideoSDK",
     img: "/HD4U.png"
   },
   {
@@ -248,7 +252,7 @@ export const projects = [
       "Collaborated with XAbility lab under Professor Keke Wu on low-vision data tools.",
       "Engineered OCR and computer vision pipelines to describe boxplots and data points."
     ],
-    github: "https://github.com/xability/ai-statguidance",
+    github: "https://github.com/xability/vastix",
     img: "/annotated.png"
   }
 ];
@@ -342,12 +346,12 @@ She is highly autonomous, makes a great teammate, and is a perfect fit for **fas
 
   // 4. TECHNICAL CURIOSITY / STACKS
   // Matches: yolov8, tensorflow, languages, tech stack, backend, frontend, cv, computer vision, code
-  if (q.match(/\b(yolov8|tensorflow|keras|pytorch|opencv|mediapipe|language|languages|tech|stack|backend|frontend|cv|computer vision|code|coding|skills|tool|tools)\b/)) {
+  if (q.match(/\b(yolov8|tensorflow|keras|pytorch|opencv|mediapipe|language|languages|tech|stack|backend|frontend|cv|computer vision|code|coding|skills|tool|tools|firebase|supabase)\b/)) {
     return `Srikriti’s technical toolkit consists of:
     
 • **Languages**: Python, Java, JavaScript/TypeScript, Swift, C++, R, SQL, HTML/CSS.
 • **ML / CV frameworks**: TensorFlow, Keras, PyTorch, MediaPipe, OpenCV, scikit-learn, GeoPandas, YOLOv8. (e.g., she uses YOLOv8 for detecting graph bounds and MediaPipe for hand/body landmark tracking).
-• **Web & DevOps**: React/Next.js, Node.js, Flask, MongoDB, Docker, Cloudflare Workers, GitHub Actions.
+• **Web & DevOps**: React/Next.js, Node.js, Flask, MongoDB, Firebase, Supabase, Docker, Cloudflare Workers, GitHub Actions.
 • **Capabilities**: Comfortable building custom deep learning classifiers, streaming real-time video processing pipelines, and writing robust backend API services.`;
   }
 
@@ -367,7 +371,7 @@ She is highly autonomous, makes a great teammate, and is a perfect fit for **fas
     return `Here are the quick links you need:
     
 • **Resume**: You can download her resume using the **Download Resume** button in the Hero section at the top of the site.
-• **Socials**: Connect on [LinkedIn](https://linkedin.com/in/srikriti-mutyala) or explore her repositories on [GitHub](https://github.com/srikritimutyala).
+• **Socials**: Connect on [LinkedIn](https://www.linkedin.com/in/srikritimutyala) or explore her repositories on [GitHub](https://github.com/srikritimutyala).
 • **Email**: Reach out directly at [mutyalasrikriti2006@gmail.com](mailto:mutyalasrikriti2006@gmail.com).
 • **Contact Form**: You can scroll to the bottom of the landing page to fill out the direct Contact form!`;
   }

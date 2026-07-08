@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { projects } from "../data/portfolioData";
-import { Github, ExternalLink, Code, Brain, Eye } from "lucide-react";
+import { Github, Code, Brain, Eye } from "lucide-react";
 
 const categories = ["All", "Computer Vision", "Machine Learning", "Full-Stack & Web"];
 
@@ -68,7 +68,7 @@ export default function Projects() {
           className="text-center mb-10"
         >
           <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight">
-            Projects Showcase - <span className="bg-gradient-to-r from-[#F72585] to-[#7209b7] bg-clip-text text-transparent">What I've Built!</span>
+            Projects Showcase - <span className="bg-gradient-to-r from-[#F72585] to-[#7209b7] bg-clip-text text-transparent">{"What I've Built!"}</span>
           </h2>
           <div className="h-1.5 w-24 bg-gradient-to-r from-[#F72585] to-[#7209b7] mx-auto mt-4 rounded-full" />
         </motion.div>
@@ -166,24 +166,15 @@ export default function Projects() {
                   </div>
 
                   {/* Card Actions */}
-                  <div className="flex gap-4 pt-4 border-t border-white/5">
+                  <div className="pt-4 border-t border-white/5">
                     <a
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-bold text-gray-200 transition-all duration-300"
+                      className="w-full flex items-center justify-center gap-2 py-2.5 rounded-full bg-gradient-to-r from-[#F72585] to-[#7209b7] text-xs font-bold text-white shadow-lg shadow-[#F72585]/20 hover:shadow-[#F72585]/40 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 cursor-pointer"
                     >
                       <Github className="h-4 w-4" />
-                      <span>Code</span>
-                    </a>
-                    <a
-                      href={project.github} // Fallback to repo if live demo isn't present
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-full bg-gradient-to-r from-[#F72585] to-[#7209b7] text-xs font-bold text-white shadow-lg shadow-[#F72585]/20 hover:shadow-[#F72585]/40 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
-                    >
-                      <ExternalLink className="h-3.5 w-3.5" />
-                      <span>Live Demo</span>
+                      <span>View Code</span>
                     </a>
                   </div>
                 </div>
